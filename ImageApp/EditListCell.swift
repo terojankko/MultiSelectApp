@@ -1,5 +1,5 @@
 //
-//  UploadCell.swift
+//  EditListCell.swift
 //  ImageApp
 //
 //  Created by Tero Jankko on 9/3/19.
@@ -7,16 +7,16 @@
 //
 
 import UIKit
-import Photos
 
-class UploadCell: UITableViewCell {
+class EditListCell: UITableViewCell {
 
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var name: UILabel!
-    //var asset: PHAsset?
+    @IBOutlet weak var uploadedBy: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

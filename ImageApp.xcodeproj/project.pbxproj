@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24D5ADF5C76C5C4EC42EABE2 /* libPods-ImageApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01221D745A6E91BAB2521217 /* libPods-ImageApp.a */; };
 		8338B38C231EE0130078B6EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B38B231EE0130078B6EF /* AppDelegate.swift */; };
 		8338B391231EE0130078B6EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8338B38F231EE0130078B6EF /* Main.storyboard */; };
 		8338B393231EE0140078B6EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8338B392231EE0140078B6EF /* Assets.xcassets */; };
@@ -16,11 +15,14 @@
 		8338B3A0231EFA930078B6EF /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B39F231EFA930078B6EF /* ImageListViewController.swift */; };
 		8338B3A4231EFDEA0078B6EF /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B3A3231EFDEA0078B6EF /* InitialViewController.swift */; };
 		8338B3A6231F073F0078B6EF /* UploadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B3A5231F073F0078B6EF /* UploadCell.swift */; };
+		8338B3A8231F10410078B6EF /* EditViewListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B3A7231F10410078B6EF /* EditViewListController.swift */; };
+		8338B3AC231F118B0078B6EF /* EditListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B3AB231F118B0078B6EF /* EditListCell.swift */; };
+		8CB8062940A2531D6DC5D4D3 /* Pods_ImageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDA6CB498247040942BB914 /* Pods_ImageApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01221D745A6E91BAB2521217 /* libPods-ImageApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImageApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		157EF16733E61AD81BFD9093 /* Pods-ImageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageApp.debug.xcconfig"; path = "Target Support Files/Pods-ImageApp/Pods-ImageApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5EDA6CB498247040942BB914 /* Pods_ImageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74365F2B046CB7CE6F4DC8AD /* Pods-ImageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageApp.release.xcconfig"; path = "Target Support Files/Pods-ImageApp/Pods-ImageApp.release.xcconfig"; sourceTree = "<group>"; };
 		8338B388231EE0130078B6EF /* ImageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8338B38B231EE0130078B6EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		8338B39F231EFA930078B6EF /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		8338B3A3231EFDEA0078B6EF /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		8338B3A5231F073F0078B6EF /* UploadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCell.swift; sourceTree = "<group>"; };
+		8338B3A7231F10410078B6EF /* EditViewListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewListController.swift; sourceTree = "<group>"; };
+		8338B3AB231F118B0078B6EF /* EditListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24D5ADF5C76C5C4EC42EABE2 /* libPods-ImageApp.a in Frameworks */,
+				8CB8062940A2531D6DC5D4D3 /* Pods_ImageApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +62,7 @@
 		6A3500917BB68616FE49428B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				01221D745A6E91BAB2521217 /* libPods-ImageApp.a */,
+				5EDA6CB498247040942BB914 /* Pods_ImageApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -93,6 +97,8 @@
 				8338B38F231EE0130078B6EF /* Main.storyboard */,
 				8338B39D231EF9690078B6EF /* PHAssetExtensions.swift */,
 				8338B3A5231F073F0078B6EF /* UploadCell.swift */,
+				8338B3A7231F10410078B6EF /* EditViewListController.swift */,
+				8338B3AB231F118B0078B6EF /* EditListCell.swift */,
 			);
 			path = ImageApp;
 			sourceTree = "<group>";
@@ -108,7 +114,7 @@
 				8338B384231EE0130078B6EF /* Sources */,
 				8338B385231EE0130078B6EF /* Frameworks */,
 				8338B386231EE0130078B6EF /* Resources */,
-				80A53B0786DB5A079DFCAFD5 /* [CP] Copy Pods Resources */,
+				F7DD2A7E53733E2FAE8D11AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,23 +172,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		80A53B0786DB5A079DFCAFD5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ImageApp/Pods-ImageApp-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ImageApp/Pods-ImageApp-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImageApp/Pods-ImageApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		88C0F4D118532D7875AFF542 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,6 +194,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F7DD2A7E53733E2FAE8D11AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImageApp/Pods-ImageApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImageApp/Pods-ImageApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImageApp/Pods-ImageApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -214,6 +220,8 @@
 			files = (
 				8338B3A4231EFDEA0078B6EF /* InitialViewController.swift in Sources */,
 				8338B39E231EF9690078B6EF /* PHAssetExtensions.swift in Sources */,
+				8338B3A8231F10410078B6EF /* EditViewListController.swift in Sources */,
+				8338B3AC231F118B0078B6EF /* EditListCell.swift in Sources */,
 				8338B3A6231F073F0078B6EF /* UploadCell.swift in Sources */,
 				8338B3A0231EFA930078B6EF /* ImageListViewController.swift in Sources */,
 				8338B38C231EE0130078B6EF /* AppDelegate.swift in Sources */,

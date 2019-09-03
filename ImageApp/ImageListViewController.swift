@@ -45,4 +45,5 @@ class ImageListViewController: UIViewController, UITableViewDataSource, UITableV
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+
 }
