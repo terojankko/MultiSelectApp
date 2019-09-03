@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InitialViewController.swift
 //  ImageApp
 //
 //  Created by Tero Jankko on 9/3/19.
@@ -10,15 +10,18 @@ import UIKit
 import BSImagePicker
 import Photos
 
-class ViewController: UIViewController {
+class InitialViewController: UIViewController {
 
     fileprivate var imageAssets = [PHAsset]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
 
-    override func viewDidAppear(_ animated: Bool) {
+        // Do any additional setup after loading the view.
+    }
+    
+
+    @IBAction func showPicker(_ sender: Any) {
         let vc = BSImagePickerViewController()
 
         bs_presentImagePickerController(vc, animated: true,
@@ -30,7 +33,10 @@ class ViewController: UIViewController {
         }, cancel: { (assets: [PHAsset]) -> Void in
             print("--> cancelled")
         }, finish: { (assets: [PHAsset]) -> Void in
-            print("--> finished")
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageListViewController") as? ImageListViewController {
+                vc.assets = assets
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }, completion: nil)
     }
 
