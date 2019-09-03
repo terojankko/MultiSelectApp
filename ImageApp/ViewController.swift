@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         bs_presentImagePickerController(vc, animated: true,
                                         select: { (asset: PHAsset) -> Void in
                                             self.imageAssets.append(asset)
+                                            print("--> added ", asset.name)
         }, deselect: { (asset: PHAsset) -> Void in
             self.imageAssets = self.imageAssets.filter { $0.localIdentifier != asset.localIdentifier }
         }, cancel: { (assets: [PHAsset]) -> Void in
@@ -33,15 +34,4 @@ class ViewController: UIViewController {
         }, completion: nil)
     }
 
-    func image(from asset: PHAsset) -> UIImage {
-        let manager = PHImageManager.default()
-        let option = PHImageRequestOptions()
-        var image = UIImage()
-        option.isSynchronous = true
-        manager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
-            image = result!
-        })
-        return image
-    }
 }
-

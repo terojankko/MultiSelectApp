@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		8338B391231EE0130078B6EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8338B38F231EE0130078B6EF /* Main.storyboard */; };
 		8338B393231EE0140078B6EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8338B392231EE0140078B6EF /* Assets.xcassets */; };
 		8338B396231EE0140078B6EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8338B394231EE0140078B6EF /* LaunchScreen.storyboard */; };
+		8338B39E231EF9690078B6EF /* PHAssetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B39D231EF9690078B6EF /* PHAssetExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8338B392231EE0140078B6EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8338B395231EE0140078B6EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8338B397231EE0140078B6EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8338B39D231EF9690078B6EF /* PHAssetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAssetExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +48,6 @@
 				157EF16733E61AD81BFD9093 /* Pods-ImageApp.debug.xcconfig */,
 				74365F2B046CB7CE6F4DC8AD /* Pods-ImageApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,6 +86,7 @@
 				8338B392231EE0140078B6EF /* Assets.xcassets */,
 				8338B394231EE0140078B6EF /* LaunchScreen.storyboard */,
 				8338B397231EE0140078B6EF /* Info.plist */,
+				8338B39D231EF9690078B6EF /* PHAssetExtensions.swift */,
 			);
 			path = ImageApp;
 			sourceTree = "<group>";
@@ -204,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8338B39E231EF9690078B6EF /* PHAssetExtensions.swift in Sources */,
 				8338B38E231EE0130078B6EF /* ViewController.swift in Sources */,
 				8338B38C231EE0130078B6EF /* AppDelegate.swift in Sources */,
 			);
