@@ -1,0 +1,24 @@
+#System files
+.DS_Store
+
+#Xcode gunk
+project.xcworkspace
+xcuserdata
+*.xcscmblueprint
+
+#AppCode gunk
+review_board_plugin*.*
+
+#Build and cocoapods stuff
+build/*
+ThirdParty/
+Pods/
+Carthage/
+.bundle/
+
+
+#Generated resources
+Smartsheet/Resource/Settings.bundle/*/Root.strings
+!SmartsheetTests/Resource/Settings.bundle/en.lproj/Root.strings
+SmartsheetTests/Resource/locStrings.json
+
