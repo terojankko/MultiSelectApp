@@ -12,7 +12,7 @@ class EditListCell: UITableViewCell {
 
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var uploadedBy: UILabel!
+    @IBOutlet weak var uploadedBy: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()

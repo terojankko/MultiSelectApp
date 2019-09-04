@@ -103,34 +103,34 @@
                                                         <constraint firstAttribute="width" constant="88" id="xZW-lm-BGP"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yo2-bl-XBz">
-                                                    <rect key="frame" x="109" y="67" width="259" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEO-w6-I4a">
                                                     <rect key="frame" x="109" y="16" width="259" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cu-1n-t2e">
+                                                    <rect key="frame" x="109" y="59" width="259" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Yo2-bl-XBz" firstAttribute="bottom" secondItem="5dn-xG-ZUa" secondAttribute="bottom" constant="-10" id="Bhd-Md-UXb"/>
+                                                <constraint firstItem="6cu-1n-t2e" firstAttribute="leading" secondItem="mEO-w6-I4a" secondAttribute="leading" id="0aI-p2-vef"/>
                                                 <constraint firstItem="5dn-xG-ZUa" firstAttribute="centerY" secondItem="s1z-jt-Qap" secondAttribute="centerY" id="JfL-YZ-jDv"/>
-                                                <constraint firstItem="Yo2-bl-XBz" firstAttribute="leading" secondItem="mEO-w6-I4a" secondAttribute="leading" id="PFz-nf-ehh"/>
+                                                <constraint firstItem="6cu-1n-t2e" firstAttribute="bottom" secondItem="5dn-xG-ZUa" secondAttribute="bottom" constant="-10" id="Vgx-Rq-LVq"/>
+                                                <constraint firstItem="6cu-1n-t2e" firstAttribute="trailing" secondItem="mEO-w6-I4a" secondAttribute="trailing" id="bRQ-eP-fX7"/>
                                                 <constraint firstItem="5dn-xG-ZUa" firstAttribute="leading" secondItem="s1z-jt-Qap" secondAttribute="leading" constant="13" id="gSN-Ao-AM9"/>
                                                 <constraint firstItem="mEO-w6-I4a" firstAttribute="top" secondItem="5dn-xG-ZUa" secondAttribute="top" constant="10" id="glh-ww-txu"/>
                                                 <constraint firstItem="mEO-w6-I4a" firstAttribute="leading" secondItem="5dn-xG-ZUa" secondAttribute="trailing" constant="8" id="jOr-JQ-szV"/>
                                                 <constraint firstAttribute="trailing" secondItem="mEO-w6-I4a" secondAttribute="trailing" constant="8" id="n8l-5g-1l9"/>
-                                                <constraint firstItem="Yo2-bl-XBz" firstAttribute="trailing" secondItem="mEO-w6-I4a" secondAttribute="trailing" id="wdz-kp-8lz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="icon" destination="5dn-xG-ZUa" id="2Vl-Co-E11"/>
                                             <outlet property="name" destination="mEO-w6-I4a" id="rqK-1Y-TXx"/>
-                                            <outlet property="uploadedBy" destination="Yo2-bl-XBz" id="ROr-ui-g2u"/>
+                                            <outlet property="uploadedBy" destination="6cu-1n-t2e" id="TnJ-Mw-XPe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

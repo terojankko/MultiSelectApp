@@ -23,6 +23,19 @@ class InitialViewController: UIViewController {
     @IBAction func showPicker(_ sender: Any) {
         let vc = BSImagePickerViewController()
 
+        vc.cellsPerRow = {(verticalSize: UIUserInterfaceSizeClass, horizontalSize: UIUserInterfaceSizeClass) -> Int in
+            switch (verticalSize, horizontalSize) {
+            case (.compact, .regular): // iPhone5-6 portrait
+                return 2
+            case (.compact, .compact): // iPhone5-6 landscape
+                return 2
+            case (.regular, .regular): // iPad portrait/landscape
+                return 3
+            default:
+                return 2
+            }
+        }
+
         bs_presentImagePickerController(vc, animated: true,
                                         select: { (asset: PHAsset) -> Void in
                                             self.assets.append(asset)
