@@ -88,7 +88,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ze-vHp">
                                     <rect key="frame" x="0.0" y="0.0" width="54" height="60"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <inset key="imageEdgeInsets" minX="18" minY="18" maxX="18" maxY="18"/>
+                                    <inset key="imageEdgeInsets" minX="18" minY="19" maxX="18" maxY="18"/>
                                     <state key="normal" image="rotate.png"/>
                                     <connections>
                                         <action selector="rotateTapped:" destination="-1" eventType="touchUpInside" id="uI0-31-5DN"/>
