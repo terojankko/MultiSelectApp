@@ -12,7 +12,6 @@ review_board_plugin*.*
 #Build and cocoapods stuff
 build/*
 ThirdParty/
-Pods/
 Carthage/
 .bundle/
 
