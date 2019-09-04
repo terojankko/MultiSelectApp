@@ -88,7 +88,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ze-vHp">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="60"/>
                                     <inset key="imageEdgeInsets" minX="18" minY="18" maxX="18" maxY="18"/>
-                                    <state key="normal" title="R" backgroundImage="arrow_down.png"/>
+                                    <state key="normal" title="R"/>
                                     <connections>
                                         <action selector="rotateTapped:" destination="-1" eventType="touchUpInside" id="uI0-31-5DN"/>
                                     </connections>
@@ -333,7 +333,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
-    <resources>
-        <image name="arrow_down.png" width="6.4000000953674316" height="6.4000000953674316"/>
-    </resources>
 </document>
