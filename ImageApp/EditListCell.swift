@@ -11,7 +11,7 @@ import UIKit
 class EditListCell: UITableViewCell {
 
     @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var name: UITextField!
     @IBOutlet weak var uploadedBy: UILabel!
 
     override func awakeFromNib() {

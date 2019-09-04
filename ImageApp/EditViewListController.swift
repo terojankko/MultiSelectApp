@@ -37,6 +37,7 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
         let asset = assets[indexPath.row]
         cell.icon.image = asset.image
         cell.name.text = asset.name
+        cell.uploadedBy.text = asset.name
         return cell
     }
 
