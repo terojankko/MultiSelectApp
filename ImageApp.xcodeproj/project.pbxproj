@@ -90,6 +90,8 @@
 			children = (
 				8338B38B231EE0130078B6EF /* AppDelegate.swift */,
 				8338B392231EE0140078B6EF /* Assets.xcassets */,
+				8338B3AB231F118B0078B6EF /* EditListCell.swift */,
+				8338B3A7231F10410078B6EF /* EditViewListController.swift */,
 				8338B39F231EFA930078B6EF /* ImageListViewController.swift */,
 				8338B397231EE0140078B6EF /* Info.plist */,
 				8338B3A3231EFDEA0078B6EF /* InitialViewController.swift */,
@@ -97,8 +99,6 @@
 				8338B38F231EE0130078B6EF /* Main.storyboard */,
 				8338B39D231EF9690078B6EF /* PHAssetExtensions.swift */,
 				8338B3A5231F073F0078B6EF /* UploadCell.swift */,
-				8338B3A7231F10410078B6EF /* EditViewListController.swift */,
-				8338B3AB231F118B0078B6EF /* EditListCell.swift */,
 			);
 			path = ImageApp;
 			sourceTree = "<group>";

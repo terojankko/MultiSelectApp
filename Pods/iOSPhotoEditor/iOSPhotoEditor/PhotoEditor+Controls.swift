@@ -28,7 +28,7 @@ extension PhotoEditorViewController {
         image = image!.rotate(radians: .pi / 2.0)
         setImageView(image: image!)
     }
-    
+
     @IBAction func cancelButtonTapped(_ sender: Any) {
         photoEditorDelegate?.canceledEditing()
         self.dismiss(animated: true, completion: nil)
