@@ -55,7 +55,7 @@ class InitialViewController: UIViewController {
             print("--> cancelled")
         }, finish: { (assets: [PHAsset]) -> Void in
             self.assets = assets
-            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageListViewController") as? ImageListViewController {
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditViewListController") as? EditViewListController {
                 vc.assets = assets
                 self.navigationController?.pushViewController(vc, animated: true)
             }

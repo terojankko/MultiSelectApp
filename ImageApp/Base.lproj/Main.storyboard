@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JVu-FN-6ko">
-                                <rect key="frame" x="8" y="44" width="398" height="824"/>
+                                <rect key="frame" x="8" y="88" width="398" height="780"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UploadCell" rowHeight="100" id="Wd3-ns-17w" customClass="UploadCell" customModule="ImageApp" customModuleProvider="target">
@@ -82,9 +82,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9e-TZ-BY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2813.04347826087" y="-958.25892857142856"/>
+            <point key="canvasLocation" x="3796" y="-608"/>
         </scene>
-        <!--Edit View List Controller-->
+        <!--Previews-->
         <scene sceneID="4k5-MC-ibM">
             <objects>
                 <viewController storyboardIdentifier="EditViewListController" id="Y8T-o1-pCB" customClass="EditViewListController" customModule="ImageApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,13 +152,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7qU-ab-kWg"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Previews" id="djG-bh-RS3">
+                        <barButtonItem key="rightBarButtonItem" title="Upload" id="otM-3F-tL7">
+                            <connections>
+                                <segue destination="JXX-Wn-gAy" kind="show" id="euZ-cP-8u3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageTable" destination="LdM-Be-Y88" id="dnd-nU-0Pv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDp-6g-AL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2811.594202898551" y="-289.28571428571428"/>
+            <point key="canvasLocation" x="2899" y="-608"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="5d2-w2-m6S">
@@ -179,7 +186,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jh-rh-EO3">
-                                        <rect key="frame" x="79.5" y="1" width="82" height="30"/>
+                                        <rect key="frame" x="74.5" y="1" width="92" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Pick images"/>
                                         <connections>
                                             <action selector="showPicker:" destination="pId-eU-2YE" eventType="touchUpInside" id="tUR-rH-4rs"/>

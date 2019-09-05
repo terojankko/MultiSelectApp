@@ -27,7 +27,7 @@ class ImageListViewController: UIViewController, UITableViewDataSource, UITableV
         }
         fileSizes = [Int]()
         for _ in 0..<assets.count {
-            fileSizes!.append(Int.random(in: 3..<15))
+            fileSizes!.append(Int.random(in: 3..<8))
         }
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
