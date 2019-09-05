@@ -12,7 +12,7 @@ import Photos
 
 class InitialViewController: UIViewController {
 
-    fileprivate var assets = [PHAsset]()
+    fileprivate var photos = [Photo]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,16 +47,15 @@ class InitialViewController: UIViewController {
 
         bs_presentImagePickerController(vc, animated: true,
                                         select: { (asset: PHAsset) -> Void in
-                                            self.assets.append(asset)
-                                            print("--> added ", asset.name)
+                                            self.photos.append(Photo(image: asset.image, name: asset.localIdentifier, uploadedBy: ""))
         }, deselect: { (asset: PHAsset) -> Void in
-            self.assets = self.assets.filter { $0.localIdentifier != asset.localIdentifier }
+            self.photos = self.photos.filter { $0.name != asset.localIdentifier }
         }, cancel: { (assets: [PHAsset]) -> Void in
             print("--> cancelled")
         }, finish: { (assets: [PHAsset]) -> Void in
-            self.assets = assets
+            //self.photos = photos
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditViewListController") as? EditViewListController {
-                vc.assets = assets
+                vc.photos = self.photos
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }, completion: nil)
@@ -68,7 +67,7 @@ class InitialViewController: UIViewController {
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editViewController = segue.destination as? EditViewListController {
-            editViewController.assets = assets
+            editViewController.photos = photos
         }
      }
 

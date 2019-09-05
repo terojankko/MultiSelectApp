@@ -13,7 +13,7 @@ class UploadViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var imageTable: UITableView!
     
-    var assets: [PHAsset]?
+    var photos: [Photo]?
     var fileSizes: [Int]?
     let startDate = Date()
     var timer: Timer?
@@ -22,11 +22,11 @@ class UploadViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         imageTable.delegate = self
         imageTable.dataSource = self
-        guard let assets = assets else {
+        guard let photos = photos else {
             return
         }
         fileSizes = [Int]()
-        for _ in 0..<assets.count {
+        for _ in 0..<photos.count {
             fileSizes!.append(Int.random(in: 3..<8))
         }
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
@@ -40,20 +40,20 @@ class UploadViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let assets = assets else {
+        guard let photos = photos else {
             return 0
         }
-        return assets.count
+        return photos.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let assets = assets else {
+        guard let photos = photos else {
             fatalError()
         }
         let cell = imageTable.dequeueReusableCell(withIdentifier: "UploadCell") as! UploadCell
-        let asset = assets[indexPath.row]
-        cell.icon.image = asset.image
-        cell.name.text = asset.name
+        let photo = photos[indexPath.row]
+        cell.icon.image = photo.image
+        cell.name.text = photo.name
         cell.index = indexPath.row
         return cell
     }
@@ -73,7 +73,7 @@ class UploadViewController: UIViewController, UITableViewDataSource, UITableView
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            assets?.remove(at: indexPath.row)
+            photos?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

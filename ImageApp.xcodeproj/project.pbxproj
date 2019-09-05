@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830B49292321C74D008AC4C1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B49282321C74D008AC4C1 /* Photo.swift */; };
 		8338B38C231EE0130078B6EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B38B231EE0130078B6EF /* AppDelegate.swift */; };
 		8338B391231EE0130078B6EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8338B38F231EE0130078B6EF /* Main.storyboard */; };
 		8338B393231EE0140078B6EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8338B392231EE0140078B6EF /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		157EF16733E61AD81BFD9093 /* Pods-ImageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageApp.debug.xcconfig"; path = "Target Support Files/Pods-ImageApp/Pods-ImageApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5EDA6CB498247040942BB914 /* Pods_ImageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74365F2B046CB7CE6F4DC8AD /* Pods-ImageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageApp.release.xcconfig"; path = "Target Support Files/Pods-ImageApp/Pods-ImageApp.release.xcconfig"; sourceTree = "<group>"; };
+		830B49282321C74D008AC4C1 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		8338B388231EE0130078B6EF /* ImageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8338B38B231EE0130078B6EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8338B390231EE0130078B6EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				8338B38F231EE0130078B6EF /* Main.storyboard */,
 				8338B39D231EF9690078B6EF /* PHAssetExtensions.swift */,
 				8338B3A5231F073F0078B6EF /* UploadCell.swift */,
+				830B49282321C74D008AC4C1 /* Photo.swift */,
 			);
 			path = ImageApp;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830B49292321C74D008AC4C1 /* Photo.swift in Sources */,
 				8338B3A4231EFDEA0078B6EF /* InitialViewController.swift in Sources */,
 				8338B39E231EF9690078B6EF /* PHAssetExtensions.swift in Sources */,
 				8338B3A8231F10410078B6EF /* EditViewListController.swift in Sources */,
