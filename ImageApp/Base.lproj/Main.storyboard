@@ -42,10 +42,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tGd-Pc-3BK">
+                                                    <rect key="frame" x="124" y="69" width="261" height="2"/>
+                                                </progressView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="LV8-fp-2xo" firstAttribute="leading" secondItem="4VV-SL-Rja" secondAttribute="trailing" constant="29" id="1kq-Fc-bmS"/>
                                                 <constraint firstAttribute="trailing" secondItem="LV8-fp-2xo" secondAttribute="trailing" constant="20" id="OHR-g4-U1x"/>
+                                                <constraint firstAttribute="trailing" secondItem="tGd-Pc-3BK" secondAttribute="trailing" constant="13" id="TLi-VD-NEe"/>
+                                                <constraint firstItem="tGd-Pc-3BK" firstAttribute="leading" secondItem="LV8-fp-2xo" secondAttribute="leading" id="W7q-2A-Zzh"/>
+                                                <constraint firstAttribute="bottom" secondItem="tGd-Pc-3BK" secondAttribute="bottom" constant="28.5" id="f4U-Jh-4PT"/>
                                                 <constraint firstItem="4VV-SL-Rja" firstAttribute="leading" secondItem="x7W-Qd-fhq" secondAttribute="leading" constant="7" id="lZp-BR-Axc"/>
                                                 <constraint firstItem="LV8-fp-2xo" firstAttribute="top" secondItem="x7W-Qd-fhq" secondAttribute="top" constant="18" id="r4g-EK-z7s"/>
                                                 <constraint firstItem="4VV-SL-Rja" firstAttribute="centerY" secondItem="x7W-Qd-fhq" secondAttribute="centerY" id="zmD-bb-yox"/>
@@ -54,6 +60,7 @@
                                         <connections>
                                             <outlet property="icon" destination="4VV-SL-Rja" id="fd4-Qy-3gP"/>
                                             <outlet property="name" destination="LV8-fp-2xo" id="ZEk-yj-wBL"/>
+                                            <outlet property="progressBar" destination="tGd-Pc-3BK" id="CL3-za-ZQ0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -75,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9e-TZ-BY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2814" y="-958"/>
+            <point key="canvasLocation" x="2813.04347826087" y="-958.25892857142856"/>
         </scene>
         <!--Edit View List Controller-->
         <scene sceneID="4k5-MC-ibM">

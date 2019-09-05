@@ -23,11 +23,20 @@ class InitialViewController: UIViewController {
     @IBAction func showPicker(_ sender: Any) {
         let vc = BSImagePickerViewController()
 
+        vc.albumButton.tintColor = UIColor.green
+        vc.cancelButton.tintColor = UIColor.red
+        vc.doneButton.tintColor = UIColor.purple
+        //vc.selectionCharacter = "✓"
+        //vc.selectionFillColor = UIColor.gray
+        vc.selectionStrokeColor = UIColor.yellow
+        vc.selectionShadowColor = UIColor.red
+        //vc.selectionTextAttributes[NSAttributedString.Key.foregroundColor] = UIColor.lightGray
+
         vc.cellsPerRow = {(verticalSize: UIUserInterfaceSizeClass, horizontalSize: UIUserInterfaceSizeClass) -> Int in
             switch (verticalSize, horizontalSize) {
-            case (.compact, .regular): // iPhone5-6 portrait
+            case (.compact, .regular): // iPhone portrait
                 return 2
-            case (.compact, .compact): // iPhone5-6 landscape
+            case (.compact, .compact): // iPhone landscape
                 return 2
             case (.regular, .regular): // iPad portrait/landscape
                 return 3

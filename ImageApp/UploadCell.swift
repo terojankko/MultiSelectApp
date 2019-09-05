@@ -13,10 +13,12 @@ class UploadCell: UITableViewCell {
 
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var name: UILabel!
-    //var asset: PHAsset?
-
+    @IBOutlet weak var progressBar: UIProgressView!
+    var index: Int?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 2)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
