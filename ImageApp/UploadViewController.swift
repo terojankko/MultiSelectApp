@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class ImageListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class UploadViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var imageTable: UITableView!
     

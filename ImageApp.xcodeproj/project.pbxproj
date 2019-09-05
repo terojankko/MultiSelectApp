@@ -12,7 +12,7 @@
 		8338B393231EE0140078B6EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8338B392231EE0140078B6EF /* Assets.xcassets */; };
 		8338B396231EE0140078B6EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8338B394231EE0140078B6EF /* LaunchScreen.storyboard */; };
 		8338B39E231EF9690078B6EF /* PHAssetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B39D231EF9690078B6EF /* PHAssetExtensions.swift */; };
-		8338B3A0231EFA930078B6EF /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B39F231EFA930078B6EF /* ImageListViewController.swift */; };
+		8338B3A0231EFA930078B6EF /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B39F231EFA930078B6EF /* UploadViewController.swift */; };
 		8338B3A4231EFDEA0078B6EF /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B3A3231EFDEA0078B6EF /* InitialViewController.swift */; };
 		8338B3A6231F073F0078B6EF /* UploadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B3A5231F073F0078B6EF /* UploadCell.swift */; };
 		8338B3A8231F10410078B6EF /* EditViewListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B3A7231F10410078B6EF /* EditViewListController.swift */; };
@@ -31,7 +31,7 @@
 		8338B395231EE0140078B6EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8338B397231EE0140078B6EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8338B39D231EF9690078B6EF /* PHAssetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAssetExtensions.swift; sourceTree = "<group>"; };
-		8338B39F231EFA930078B6EF /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
+		8338B39F231EFA930078B6EF /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		8338B3A3231EFDEA0078B6EF /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		8338B3A5231F073F0078B6EF /* UploadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCell.swift; sourceTree = "<group>"; };
 		8338B3A7231F10410078B6EF /* EditViewListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewListController.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 				8338B392231EE0140078B6EF /* Assets.xcassets */,
 				8338B3AB231F118B0078B6EF /* EditListCell.swift */,
 				8338B3A7231F10410078B6EF /* EditViewListController.swift */,
-				8338B39F231EFA930078B6EF /* ImageListViewController.swift */,
+				8338B39F231EFA930078B6EF /* UploadViewController.swift */,
 				8338B397231EE0140078B6EF /* Info.plist */,
 				8338B3A3231EFDEA0078B6EF /* InitialViewController.swift */,
 				8338B394231EE0140078B6EF /* LaunchScreen.storyboard */,
@@ -223,7 +223,7 @@
 				8338B3A8231F10410078B6EF /* EditViewListController.swift in Sources */,
 				8338B3AC231F118B0078B6EF /* EditListCell.swift in Sources */,
 				8338B3A6231F073F0078B6EF /* UploadCell.swift in Sources */,
-				8338B3A0231EFA930078B6EF /* ImageListViewController.swift in Sources */,
+				8338B3A0231EFA930078B6EF /* UploadViewController.swift in Sources */,
 				8338B38C231EE0130078B6EF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

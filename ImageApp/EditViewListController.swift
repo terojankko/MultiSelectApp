@@ -71,8 +71,8 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let imageListViewController = segue.destination as? ImageListViewController {
-            imageListViewController.assets = assets
+        if let uploadViewController = segue.destination as? UploadViewController {
+            uploadViewController.assets = assets
         }
     }
 
