@@ -12,7 +12,7 @@ import Photos
 
 class InitialViewController: UIViewController {
 
-    fileprivate var photos = [Photo]()
+    //fileprivate var photos = [Photo]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,29 +46,30 @@ class InitialViewController: UIViewController {
         }
 
         bs_presentImagePickerController(vc, animated: true,
-                                        select: { (asset: PHAsset) -> Void in
-                                            self.photos.append(Photo(image: asset.image, name: asset.localIdentifier, uploadedBy: ""))
-        }, deselect: { (asset: PHAsset) -> Void in
-            self.photos = self.photos.filter { $0.name != asset.localIdentifier }
+                                        select: nil, deselect: { (asset: PHAsset) -> Void in
+            //self.photos = self.photos.filter { $0.name != asset.localIdentifier }
         }, cancel: { (assets: [PHAsset]) -> Void in
             print("--> cancelled")
-        }, finish: { (assets: [PHAsset]) -> Void in
-            //self.photos = photos
+        }, finish: { [unowned self] (assets: [PHAsset]) -> Void in
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditViewListController") as? EditViewListController {
-                vc.photos = self.photos
+                vc.photos = self.photosFromAssets(assets)
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }, completion: nil)
     }
 
-
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let editViewController = segue.destination as? EditViewListController {
-            editViewController.photos = photos
+    func photosFromAssets(_ assets: [PHAsset]   ) -> [Photo] {
+        var photos = [Photo]()
+        let dispatchGroup = DispatchGroup()
+        for asset in assets {
+            dispatchGroup.enter()
+            DispatchQueue.global(priority: .default).async {
+                photos.append(Photo(image: asset.image, name: asset.localIdentifier, uploadedBy: "Tero"))
+                dispatchGroup.leave()
+            }
         }
-     }
+        dispatchGroup.wait()
+        return photos
+    }
 
 }
