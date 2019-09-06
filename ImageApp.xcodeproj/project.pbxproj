@@ -18,6 +18,7 @@
 		8338B3A6231F073F0078B6EF /* UploadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B3A5231F073F0078B6EF /* UploadCell.swift */; };
 		8338B3A8231F10410078B6EF /* EditViewListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B3A7231F10410078B6EF /* EditViewListController.swift */; };
 		8338B3AC231F118B0078B6EF /* EditListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8338B3AB231F118B0078B6EF /* EditListCell.swift */; };
+		83E3D23A2322F801004EC770 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D2392322F801004EC770 /* SpinnerViewController.swift */; };
 		8CB8062940A2531D6DC5D4D3 /* Pods_ImageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDA6CB498247040942BB914 /* Pods_ImageApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		8338B3A5231F073F0078B6EF /* UploadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCell.swift; sourceTree = "<group>"; };
 		8338B3A7231F10410078B6EF /* EditViewListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewListController.swift; sourceTree = "<group>"; };
 		8338B3AB231F118B0078B6EF /* EditListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditListCell.swift; sourceTree = "<group>"; };
+		83E3D2392322F801004EC770 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				8338B39D231EF9690078B6EF /* PHAssetExtensions.swift */,
 				8338B3A5231F073F0078B6EF /* UploadCell.swift */,
 				830B49282321C74D008AC4C1 /* Photo.swift */,
+				83E3D2392322F801004EC770 /* SpinnerViewController.swift */,
 			);
 			path = ImageApp;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				8338B3AC231F118B0078B6EF /* EditListCell.swift in Sources */,
 				8338B3A6231F073F0078B6EF /* UploadCell.swift in Sources */,
 				8338B3A0231EFA930078B6EF /* UploadViewController.swift in Sources */,
+				83E3D23A2322F801004EC770 /* SpinnerViewController.swift in Sources */,
 				8338B38C231EE0130078B6EF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

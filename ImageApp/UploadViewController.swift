@@ -17,7 +17,7 @@ class UploadViewController: UIViewController, UITableViewDataSource, UITableView
     var fileSizes: [Int]?
     let startDate = Date()
     var timer: Timer?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageTable.delegate = self

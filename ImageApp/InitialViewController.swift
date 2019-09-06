@@ -19,7 +19,12 @@ class InitialViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+
+    var start = 0.0
+
+    var photos = [Photo]()
+    let dispatchGroup = DispatchGroup()
+
     @IBAction func showPicker(_ sender: Any) {
         let vc = BSImagePickerViewController()
 
@@ -46,30 +51,35 @@ class InitialViewController: UIViewController {
         }
 
         bs_presentImagePickerController(vc, animated: true,
-                                        select: nil, deselect: { (asset: PHAsset) -> Void in
-            //self.photos = self.photos.filter { $0.name != asset.localIdentifier }
+                                        select: { (asset: PHAsset) -> Void in
+                                            self.dispatchGroup.enter()
+                                            DispatchQueue.global(qos: .default).async {
+                                                self.photos.append(Photo(image: asset.image, name: asset.localIdentifier, uploadedBy: "Tero"))
+                                                self.dispatchGroup.leave()
+                                            }
+        }, deselect: { (asset: PHAsset) -> Void in
+            self.photos = self.photos.filter { $0.name != asset.localIdentifier }
         }, cancel: { (assets: [PHAsset]) -> Void in
             print("--> cancelled")
         }, finish: { [unowned self] (assets: [PHAsset]) -> Void in
+            self.start = Date().timeIntervalSince1970
+            print("--> alku")
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditViewListController") as? EditViewListController {
-                vc.photos = self.photosFromAssets(assets)
+                print("--> ennen copying photos ", Date().timeIntervalSince1970 - self.start)
+                vc.photos = self.photos
+                vc.start = self.start
+                self.dispatchGroup.wait()
+                print("--> ennen push ", Date().timeIntervalSince1970 - self.start)
                 self.navigationController?.pushViewController(vc, animated: true)
             }
-        }, completion: nil)
+            }, completion: nil)
     }
 
-    func photosFromAssets(_ assets: [PHAsset]   ) -> [Photo] {
-        var photos = [Photo]()
-        let dispatchGroup = DispatchGroup()
-        for asset in assets {
-            dispatchGroup.enter()
-            DispatchQueue.global(qos: .default).async {
-                photos.append(Photo(image: asset.image, name: asset.localIdentifier, uploadedBy: "Tero"))
-                dispatchGroup.leave()
-            }
-        }
-        dispatchGroup.wait()
-        return photos
+    override func viewDidDisappear(_ animated: Bool) {
+        print("--> did disappear ", Date().timeIntervalSince1970 - start)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        print("--> will disappear ", Date().timeIntervalSince1970 - start)
+    }
 }

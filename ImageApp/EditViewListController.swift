@@ -15,13 +15,23 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var imageTable: UITableView!
 
     var photos: [Photo]?
-
+    var start = 0.0
+    
     override func viewDidLoad() {
+        print("--> did load ", Date().timeIntervalSince1970 - start)
         super.viewDidLoad()
         imageTable.delegate = self
         imageTable.dataSource = self
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        print("--> will appear ", Date().timeIntervalSince1970 - start)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        print("--> did appear ", Date().timeIntervalSince1970 - start)
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let photos = photos else {
             fatalError()
