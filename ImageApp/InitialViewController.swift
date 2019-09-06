@@ -24,6 +24,7 @@ class InitialViewController: UIViewController {
 
     var photos = [Photo]()
     let dispatchGroup = DispatchGroup()
+    let child = SpinnerViewController()
 
     @IBAction func showPicker(_ sender: Any) {
         let vc = BSImagePickerViewController()
@@ -64,6 +65,12 @@ class InitialViewController: UIViewController {
         }, finish: { [unowned self] (assets: [PHAsset]) -> Void in
             self.start = Date().timeIntervalSince1970
             print("--> alku")
+
+            self.addChild(self.child)
+            self.child.view.frame = self.view.frame
+            self.view.addSubview(self.child.view)
+            self.child.didMove(toParent: self)
+
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditViewListController") as? EditViewListController {
                 print("--> ennen copying photos ", Date().timeIntervalSince1970 - self.start)
                 vc.photos = self.photos
@@ -77,6 +84,9 @@ class InitialViewController: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         print("--> did disappear ", Date().timeIntervalSince1970 - start)
+        child.willMove(toParent: nil)
+        child.view.removeFromSuperview()
+        child.removeFromParent()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
