@@ -63,7 +63,7 @@ class InitialViewController: UIViewController {
         let dispatchGroup = DispatchGroup()
         for asset in assets {
             dispatchGroup.enter()
-            DispatchQueue.global(priority: .default).async {
+            DispatchQueue.global(qos: .default).async {
                 photos.append(Photo(image: asset.image, name: asset.localIdentifier, uploadedBy: "Tero"))
                 dispatchGroup.leave()
             }
