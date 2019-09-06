@@ -108,7 +108,10 @@ extension PhotoEditorViewController {
     @IBAction func continueButtonPressed(_ sender: Any) {
         let img = self.canvasView.toImage()
         photoEditorDelegate?.doneEditing(image: img)
-        self.dismiss(animated: true, completion: nil)
+        image = img
+        //self.dismiss(animated: true, completion: nil)
+        setImageView(image: img)
+        clearButtonTapped(self)
     }
 
     //MAKR: helper methods
@@ -136,7 +139,7 @@ extension PhotoEditorViewController {
             case .sticker:
                 stickerButton.isHidden = true
             case .text:
-                stickerButton.isHidden = true
+                textButton.isHidden = true
             }
         }
     }

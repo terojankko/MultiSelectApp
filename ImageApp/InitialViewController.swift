@@ -36,7 +36,6 @@ class InitialViewController: UIViewController {
         //vc.selectionFillColor = UIColor.gray
         vc.selectionStrokeColor = UIColor.yellow
         vc.selectionShadowColor = UIColor.red
-        //vc.selectionTextAttributes[NSAttributedString.Key.foregroundColor] = UIColor.lightGray
 
         vc.cellsPerRow = {(verticalSize: UIUserInterfaceSizeClass, horizontalSize: UIUserInterfaceSizeClass) -> Int in
             switch (verticalSize, horizontalSize) {

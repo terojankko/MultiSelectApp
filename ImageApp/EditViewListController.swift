@@ -58,12 +58,8 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
         let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
         photoEditor.photoEditorDelegate = self
         photoEditor.image = photo.image
-        //photoEditor.hiddenControls = [.crop, .draw, .share]
         photoEditor.colors = [.red,.blue,.green]
-        //Stickers that the user will choose from to add on the image
-        /*for i in 0...10 {
-            photoEditor.stickers.append(UIImage(named: i.description )!)
-        }*/
+        photoEditor.hiddenControls = [.text, .sticker]
 
         present(photoEditor, animated: true, completion: nil)
     }
