@@ -24,10 +24,6 @@ extension PhotoEditorViewController {
 
 
      //MARK: Top Toolbar
-    @IBAction func rotateTapped(_ sender: Any) {
-        image = image!.rotate(radians: .pi / 2.0)
-        setImageView(image: image!)
-    }
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
         photoEditorDelegate?.canceledEditing()

@@ -82,20 +82,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MS-N5-3xY">
                     <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Doi-2Z-r5q">
-                            <rect key="frame" x="108" y="0.0" width="294" height="60"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Doi-2Z-r5q">
+                            <rect key="frame" x="104" y="0.0" width="298" height="60"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-ze-vHp">
-                                    <rect key="frame" x="0.0" y="11.666666666666664" width="37" height="37"/>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <inset key="imageEdgeInsets" minX="11" minY="8" maxX="8" maxY="11"/>
-                                    <state key="normal" image="rotate.png"/>
-                                    <connections>
-                                        <action selector="rotateTapped:" destination="-1" eventType="touchUpInside" id="uI0-31-5DN"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghm-bq-BmY">
-                                    <rect key="frame" x="64.333333333333343" y="11.666666666666664" width="37" height="37"/>
+                                    <rect key="frame" x="0.0" y="11.666666666666664" width="37" height="37"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
                                     <state key="normal" title="">
@@ -107,7 +98,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLX-iy-2Rc">
-                                    <rect key="frame" x="128.66666666666663" y="11.666666666666664" width="37" height="37"/>
+                                    <rect key="frame" x="87" y="11.666666666666664" width="37" height="37"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
                                     <state key="normal" title="">
@@ -119,7 +110,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qm4-f6-DBr">
-                                    <rect key="frame" x="192.66666666666669" y="11.666666666666664" width="37" height="37"/>
+                                    <rect key="frame" x="174" y="11.666666666666664" width="37" height="37"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
                                     <state key="normal" title="">
@@ -131,7 +122,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-LJ-SyD">
-                                    <rect key="frame" x="257" y="11.666666666666664" width="37" height="37"/>
+                                    <rect key="frame" x="261" y="11.666666666666664" width="37" height="37"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="37" id="8Gp-k1-kvm"/>
                                         <constraint firstAttribute="height" constant="37" id="qo9-nI-Rs1"/>
@@ -149,13 +140,11 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="Ghm-bq-BmY" firstAttribute="width" secondItem="PLX-iy-2Rc" secondAttribute="width" id="0jE-f1-MWr"/>
-                                <constraint firstItem="3Ya-ze-vHp" firstAttribute="height" secondItem="Ghm-bq-BmY" secondAttribute="height" id="3ve-J3-D6f"/>
                                 <constraint firstItem="Qm4-f6-DBr" firstAttribute="height" secondItem="0wH-LJ-SyD" secondAttribute="height" id="5H8-xO-C5y"/>
                                 <constraint firstItem="Ghm-bq-BmY" firstAttribute="height" secondItem="PLX-iy-2Rc" secondAttribute="height" id="5Lz-jV-gLU"/>
                                 <constraint firstItem="PLX-iy-2Rc" firstAttribute="width" secondItem="Qm4-f6-DBr" secondAttribute="width" id="5mv-gt-l3X"/>
                                 <constraint firstItem="PLX-iy-2Rc" firstAttribute="height" secondItem="Qm4-f6-DBr" secondAttribute="height" id="AM3-eH-nsh"/>
                                 <constraint firstItem="Qm4-f6-DBr" firstAttribute="width" secondItem="0wH-LJ-SyD" secondAttribute="width" id="PBc-nd-EtB"/>
-                                <constraint firstItem="3Ya-ze-vHp" firstAttribute="width" secondItem="Ghm-bq-BmY" secondAttribute="width" id="VWQ-CJ-Rr0"/>
                             </constraints>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9an-1W-thw">
@@ -182,7 +171,6 @@
                         <constraint firstAttribute="trailing" secondItem="Doi-2Z-r5q" secondAttribute="trailing" constant="12" id="Ank-Rs-hHo"/>
                         <constraint firstAttribute="height" constant="60" id="RSV-Dw-76F"/>
                         <constraint firstItem="Doi-2Z-r5q" firstAttribute="top" secondItem="3MS-N5-3xY" secondAttribute="top" id="YMJ-5J-baj"/>
-                        <constraint firstItem="Doi-2Z-r5q" firstAttribute="leading" secondItem="9an-1W-thw" secondAttribute="trailing" constant="66" id="ema-rF-kfc"/>
                         <constraint firstItem="9an-1W-thw" firstAttribute="leading" secondItem="3MS-N5-3xY" secondAttribute="leading" constant="12" id="lPL-cU-BVr"/>
                     </constraints>
                 </view>
@@ -353,7 +341,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
-    <resources>
-        <image name="rotate.png" width="54" height="54"/>
-    </resources>
 </document>
