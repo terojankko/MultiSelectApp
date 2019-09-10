@@ -16,8 +16,11 @@ class InitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if traitCollection.userInterfaceStyle == .light {
+            print("--> Light mode")
+        } else {
+            print("--> Dark mode")
+        }
     }
 
     var start = 0.0

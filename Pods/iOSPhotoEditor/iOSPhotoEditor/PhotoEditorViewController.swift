@@ -25,16 +25,13 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var bottomGradient: UIView!
     
     @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var colorsCollectionView: UICollectionView!
     @IBOutlet weak var colorPickerView: UIView!
     @IBOutlet weak var colorPickerViewBottomConstraint: NSLayoutConstraint!
     
     //Controls
     @IBOutlet weak var cropButton: UIButton!
-    @IBOutlet weak var stickerButton: UIButton!
     @IBOutlet weak var drawButton: UIButton!
-    @IBOutlet weak var textButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
@@ -81,11 +78,6 @@ public final class PhotoEditorViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.setImageView(image: image!)
-        
-        deleteView.layer.cornerRadius = deleteView.bounds.height / 2
-        deleteView.layer.borderWidth = 2.0
-        deleteView.layer.borderColor = UIColor.white.cgColor
-        deleteView.clipsToBounds = true
         
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .bottom
