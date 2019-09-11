@@ -11,6 +11,7 @@ extension PhotoEditorViewController {
     
     override public func touchesBegan(_ touches: Set<UITouch>,
                                       with event: UIEvent?){
+        print("--> touchesBegin")
         if isDrawing {
             swiped = false
             if let touch = touches.first {
@@ -31,6 +32,7 @@ extension PhotoEditorViewController {
     
     override public func touchesMoved(_ touches: Set<UITouch>,
                                       with event: UIEvent?){
+        print("--> touchesMoved")
         if isDrawing {
             // 6
             swiped = true
@@ -46,6 +48,7 @@ extension PhotoEditorViewController {
     
     override public func touchesEnded(_ touches: Set<UITouch>,
                                       with event: UIEvent?){
+        print("--> touchesEnded")
         if isDrawing {
             if !swiped {
                 // draw a single point

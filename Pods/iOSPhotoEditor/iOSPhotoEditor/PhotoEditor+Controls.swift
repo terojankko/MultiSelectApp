@@ -88,6 +88,13 @@ extension PhotoEditorViewController {
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
         let activity = UIActivityViewController(activityItems: [canvasView.toImage()], applicationActivities: nil)
+
+        if let popoverPresentationController = activity.popoverPresentationController {
+            popoverPresentationController.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
+            popoverPresentationController.sourceView = self.view
+            popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        }
+
         present(activity, animated: true, completion: nil)
         
     }
