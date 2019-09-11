@@ -23,7 +23,7 @@ public enum control {
 extension PhotoEditorViewController {
 
 
-     //MARK: Top Toolbar
+    //MARK: Top Toolbar
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
         photoEditorDelegate?.canceledEditing()
@@ -88,15 +88,13 @@ extension PhotoEditorViewController {
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
         let activity = UIActivityViewController(activityItems: [canvasView.toImage()], applicationActivities: nil)
-
-        if let popoverPresentationController = activity.popoverPresentationController {
-            popoverPresentationController.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
-            popoverPresentationController.sourceView = self.view
-            popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        guard let popoverPresentationController = activity.popoverPresentationController else {
+            return
         }
-
+        popoverPresentationController.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
+        popoverPresentationController.sourceView = self.view
+        popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
         present(activity, animated: true, completion: nil)
-        
     }
     
     @IBAction func clearButtonTapped(_ sender: AnyObject) {
