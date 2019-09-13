@@ -35,7 +35,8 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
-    
+    @IBOutlet weak var textButton: UIButton!
+
     public var image: UIImage?
     /**
      Array of Stickers -UIImage- that the user will choose from
@@ -51,7 +52,7 @@ public final class PhotoEditorViewController: UIViewController {
     
     // list of controls to be hidden
     public var hiddenControls : [control] = []
-    
+
     var stickersVCIsVisible = false
     var drawColor: UIColor = UIColor.black
     var textColor: UIColor = UIColor.white

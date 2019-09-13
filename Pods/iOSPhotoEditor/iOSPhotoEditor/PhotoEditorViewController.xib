@@ -32,6 +32,7 @@
                 <outlet property="imageViewHeightConstraint" destination="DdY-qb-dfp" id="ZY9-Em-cs4"/>
                 <outlet property="saveButton" destination="mW4-Jz-sic" id="1Uj-nU-EU1"/>
                 <outlet property="shareButton" destination="zlw-H0-WcJ" id="OZv-z0-8s8"/>
+                <outlet property="textButton" destination="Kdb-83-xl1" id="cEu-v1-NFA"/>
                 <outlet property="topGradient" destination="rLz-36-0xz" id="0Yd-em-MMy"/>
                 <outlet property="topToolbar" destination="3MS-N5-3xY" id="kzY-Ga-SoQ"/>
                 <outlet property="view" destination="HPk-Bg-V0q" id="eF4-Ac-Nav"/>
@@ -117,7 +118,7 @@
                     <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZRl-89-gRO">
-                            <rect key="frame" x="12" y="0.0" width="210" height="52"/>
+                            <rect key="frame" x="12" y="0.0" width="255" height="52"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW4-Jz-sic">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="52"/>
@@ -177,6 +178,18 @@
                                     </state>
                                     <connections>
                                         <action selector="cropButtonTapped:" destination="-1" eventType="touchUpInside" id="fa9-jd-guk"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdb-83-xl1">
+                                    <rect key="frame" x="225" y="0.0" width="30" height="52"/>
+                                    <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
+                                    <size key="titleShadowOffset" width="1" height="0.0"/>
+                                    <state key="normal" title="">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="textButtonTapped:" destination="-1" eventType="touchUpInside" id="gIM-XO-gRi"/>
                                     </connections>
                                 </button>
                             </subviews>
