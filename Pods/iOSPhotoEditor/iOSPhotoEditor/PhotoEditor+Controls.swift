@@ -22,7 +22,6 @@ public enum control {
 
 extension PhotoEditorViewController {
 
-
     //MARK: Top Toolbar
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -53,8 +52,8 @@ extension PhotoEditorViewController {
     @IBAction func textButtonTapped(_ sender: Any) {
         isTyping = true
         let textView = UITextView(frame: CGRect(x: 0, y: canvasImageView.center.y,
-                                                width: UIScreen.main.bounds.width, height: 30))
-
+                                                width: 40, height: 30))
+        textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textAlignment = .center
         textView.font = UIFont(name: "Helvetica", size: 30)
         textView.textColor = textColor
@@ -63,14 +62,38 @@ extension PhotoEditorViewController {
         textView.layer.shadowOpacity = 0.2
         textView.layer.shadowRadius = 1.0
         textView.layer.backgroundColor = UIColor.clear.cgColor
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.red.cgColor
         textView.autocorrectionType = .no
         textView.isScrollEnabled = false
         textView.delegate = self
-        self.canvasImageView.addSubview(textView)
+        canvasImageView.addSubview(textView)
+
+        textfieldLayoutWidthConstraint = NSLayoutConstraint(item: textView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 200)
+        let horizontalConstraint = NSLayoutConstraint(item: textView, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: canvasImageView, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
+        let verticalConstraint = NSLayoutConstraint(item: textView, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: canvasImageView, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0)
+        canvasImageView.addConstraints([horizontalConstraint, verticalConstraint, textfieldLayoutWidthConstraint!])
         addGestures(view: textView)
         textView.becomeFirstResponder()
     }    
-    
+
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        print("--> ")
+        guard let textfieldLayoutWidthConstraint = textfieldLayoutWidthConstraint else {
+            return true
+        }
+        let strForWholeString = NSString(format:"%@%@", textView.text!, text) as String
+        let fontSize: CGSize = strForWholeString.size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 30)!])
+        print("--> font size: ", fontSize)
+        //if textfieldLayoutWidthConstraint.constant >= CGFloat(floatLiteral: 40.0) {
+            print("--> setting constraint: ", fontSize.width + 40)
+            textfieldLayoutWidthConstraint.constant = fontSize.width + 40
+            view.layoutIfNeeded();
+            view.updateConstraints();
+        //}
+        return true
+    }
+
     @IBAction func doneButtonTapped(_ sender: Any) {
         view.endEditing(true)
         doneButton.isHidden = true

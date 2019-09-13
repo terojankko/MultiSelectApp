@@ -37,6 +37,8 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var textButton: UIButton!
 
+    var textfieldLayoutWidthConstraint: NSLayoutConstraint?
+
     public var image: UIImage?
     /**
      Array of Stickers -UIImage- that the user will choose from
