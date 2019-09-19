@@ -11,12 +11,9 @@ import Photos
 import iOSPhotoEditor
 
 protocol PhotoUpdater {
-    func editImage(_ photoAttachment: PhotoAttachment)
+    func editImage(_ index: Int)
 }
 
-extension PhotoUpdater {
-
-}
 class EditViewListController: UIViewController, UITableViewDataSource, UITableViewDelegate, PhotoEditorDelegate, PhotoUpdater {
 
     @IBOutlet weak var imageTable: UITableView!
@@ -55,7 +52,7 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
         cell.icon.image = photo.image
         cell.name.text = photo.name
         cell.uploadedBy.text = photo.name
-        cell.photoAttachment = photo
+        cell.index = indexPath.row
         cell.delegate = self
         return cell
     }
@@ -67,12 +64,16 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
         if photo.mediaType != .photo {
             return
         }
-        editImage(photo)
+        editImage(indexPath.row)
     }
 
     func doneEditing(image: UIImage) {
         print("--> done editing called with image")
-        // save image
+        if attachmentBeingEdited == nil {
+            return
+        }
+        photos![attachmentBeingEdited!].image = image
+        imageTable.reloadData()
     }
 
     func canceledEditing() {
@@ -87,14 +88,15 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
             uploadViewController.photos = photos
         }
     }
+    var attachmentBeingEdited: Int?
 
-    func editImage(_ photoAttachment: PhotoAttachment) {
+    func editImage(_ index: Int) {
         let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
         photoEditor.photoEditorDelegate = self
-        photoEditor.image = photoAttachment.image
+        photoEditor.image = photos![index].image
         photoEditor.colors = [.red,.blue,.green]
         photoEditor.hiddenControls = [.text, .sticker]
-
+        attachmentBeingEdited = index
         present(photoEditor, animated: true, completion: nil)
     }
 }

@@ -15,7 +15,7 @@ class EditListCell: UITableViewCell {
     @IBOutlet weak var uploadedBy: UITextField!
     @IBOutlet weak var editButton: UIButton!
 
-    var photoAttachment: PhotoAttachment?
+    var index: Int?
     var delegate: PhotoUpdater?
     
     override func awakeFromNib() {
@@ -30,10 +30,10 @@ class EditListCell: UITableViewCell {
     }
 
     @IBAction func editTapped(_ sender: Any) {
-        guard let photoAttachment = photoAttachment else {
+        guard let index = index else {
             return
         }
-        delegate?.editImage(photoAttachment)
+        delegate?.editImage(index)
     }
     
 }
