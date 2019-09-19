@@ -13,7 +13,7 @@ class UploadViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var imageTable: UITableView!
     
-    var photos: [Photo]?
+    var photos: [PhotoAttachment]?
     var fileSizes: [Int]?
     let startDate = Date()
     var timer: Timer?

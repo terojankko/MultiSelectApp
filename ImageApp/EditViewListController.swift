@@ -10,11 +10,18 @@ import UIKit
 import Photos
 import iOSPhotoEditor
 
-class EditViewListController: UIViewController, UITableViewDataSource, UITableViewDelegate, PhotoEditorDelegate {
+protocol PhotoUpdater {
+    func editImage(_ photoAttachment: PhotoAttachment)
+}
+
+extension PhotoUpdater {
+
+}
+class EditViewListController: UIViewController, UITableViewDataSource, UITableViewDelegate, PhotoEditorDelegate, PhotoUpdater {
 
     @IBOutlet weak var imageTable: UITableView!
 
-    var photos: [Photo]?
+    var photos: [PhotoAttachment]?
     var start = 0.0
     
     override func viewDidLoad() {
@@ -48,6 +55,8 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
         cell.icon.image = photo.image
         cell.name.text = photo.name
         cell.uploadedBy.text = photo.name
+        cell.photoAttachment = photo
+        cell.delegate = self
         return cell
     }
 
@@ -55,13 +64,10 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
         guard let photo = photos?[indexPath.row] else {
             fatalError()
         }
-        let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
-        photoEditor.photoEditorDelegate = self
-        photoEditor.image = photo.image
-        photoEditor.colors = [.red,.blue,.green]
-        photoEditor.hiddenControls = [.text, .sticker]
-
-        present(photoEditor, animated: true, completion: nil)
+        if photo.mediaType != .photo {
+            return
+        }
+        editImage(photo)
     }
 
     func doneEditing(image: UIImage) {
@@ -82,5 +88,13 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
 
+    func editImage(_ photoAttachment: PhotoAttachment) {
+        let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
+        photoEditor.photoEditorDelegate = self
+        photoEditor.image = photoAttachment.image
+        photoEditor.colors = [.red,.blue,.green]
+        photoEditor.hiddenControls = [.text, .sticker]
 
+        present(photoEditor, animated: true, completion: nil)
+    }
 }

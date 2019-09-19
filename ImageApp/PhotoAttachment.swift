@@ -9,8 +9,14 @@
 import Foundation
 import UIKit
 
-struct Photo {
+enum MediaType {
+    case photo
+    case video
+}
+
+struct PhotoAttachment {
     var image: UIImage
     var name: String
     var uploadedBy: String
+    var mediaType: MediaType
 }

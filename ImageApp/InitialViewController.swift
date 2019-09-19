@@ -10,9 +10,10 @@ import UIKit
 import BSImagePicker
 import Photos
 
-class InitialViewController: UIViewController {
+class InitialViewController: UIViewController, UsesSpinner {
 
     //fileprivate var photos = [Photo]()
+    var spinner: SpinnerViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class InitialViewController: UIViewController {
 
     var start = 0.0
 
-    var photos = [Photo]()
+    var photos = [PhotoAttachment]()
     let dispatchGroup = DispatchGroup()
     let child = SpinnerViewController()
 
@@ -57,7 +58,7 @@ class InitialViewController: UIViewController {
                                         select: { (asset: PHAsset) -> Void in
                                             self.dispatchGroup.enter()
                                             DispatchQueue.global(qos: .default).async {
-                                                self.photos.append(Photo(image: asset.image, name: asset.localIdentifier, uploadedBy: "Tero"))
+                                                self.photos.append(PhotoAttachment(image: asset.image, name: asset.localIdentifier, uploadedBy: "Tero", mediaType: asset.mediaType == .video ? MediaType.video : MediaType.photo ))
                                                 self.dispatchGroup.leave()
                                             }
         }, deselect: { (asset: PHAsset) -> Void in
@@ -68,10 +69,7 @@ class InitialViewController: UIViewController {
             self.start = Date().timeIntervalSince1970
             print("--> alku")
 
-            self.addChild(self.child)
-            self.child.view.frame = self.view.frame
-            self.view.addSubview(self.child.view)
-            self.child.didMove(toParent: self)
+            self.spinner = self.showSpinner()
 
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditViewListController") as? EditViewListController {
                 print("--> ennen copying photos ", Date().timeIntervalSince1970 - self.start)
@@ -86,9 +84,11 @@ class InitialViewController: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         print("--> did disappear ", Date().timeIntervalSince1970 - start)
-        child.willMove(toParent: nil)
-        child.view.removeFromSuperview()
-        child.removeFromParent()
+        guard let spinner = spinner else {
+            return
+        }
+        self.hideSpinner(spinner)
+        self.spinner = nil
     }
 
     override func viewWillDisappear(_ animated: Bool) {

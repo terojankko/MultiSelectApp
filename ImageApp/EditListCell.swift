@@ -13,7 +13,11 @@ class EditListCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var uploadedBy: UITextField!
+    @IBOutlet weak var editButton: UIButton!
 
+    var photoAttachment: PhotoAttachment?
+    var delegate: PhotoUpdater?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,4 +29,11 @@ class EditListCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func editTapped(_ sender: Any) {
+        guard let photoAttachment = photoAttachment else {
+            return
+        }
+        delegate?.editImage(photoAttachment)
+    }
+    
 }
