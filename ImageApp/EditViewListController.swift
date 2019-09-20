@@ -8,7 +8,7 @@
 
 import UIKit
 import Photos
-import iOSPhotoEditor
+//import iOSPhotoEditor
 
 protocol PhotoUpdater {
     func editImage(_ index: Int)
@@ -95,7 +95,7 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
         photoEditor.photoEditorDelegate = self
         photoEditor.image = photos![index].image
         photoEditor.colors = [.red,.blue,.green]
-        photoEditor.hiddenControls = [.text, .sticker]
+        photoEditor.hiddenControls = [.sticker]
         attachmentBeingEdited = index
         present(photoEditor, animated: true, completion: nil)
     }
