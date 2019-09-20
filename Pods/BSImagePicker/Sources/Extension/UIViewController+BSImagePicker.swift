@@ -55,5 +55,4 @@ public extension UIViewController {
             self.present(imagePicker, animated: animated, completion: completion)
         }
     }
-
 }
