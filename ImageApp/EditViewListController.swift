@@ -95,7 +95,7 @@ class EditViewListController: UIViewController, UITableViewDataSource, UITableVi
         photoEditor.photoEditorDelegate = self
         photoEditor.image = photos![index].image
         photoEditor.colors = [.red,.blue,.green]
-        photoEditor.hiddenControls = [.sticker]
+        photoEditor.hiddenControls = [.sticker, .share, .clear]
         attachmentBeingEdited = index
         present(photoEditor, animated: true, completion: nil)
     }
